@@ -3,6 +3,8 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
+    box-sizing: border-box;
+    background-color: #a6e7ff;
 }
 
 #container {    
@@ -12,40 +14,43 @@ body {
     font-size: 1.75rem;
     max-height: 100vh;
     max-width: 25%;
-    margin-top: 50px;
-    padding: 15px 5px;
+    margin-top: 75px;
+    padding: 20px 5px;
+    background-color: #4682b4;
     border: 2px solid black; 
     border-radius: 10px;
 }
 
 #textboxContainer {
-    width: 80%;
+    width: 85%;
     margin-top: 5px;
-    border: 2px solid green;
+    border: 2px solid red;
 }
 
 #textDisplay {
+    text-align: right;
     margin: 5px auto;
-    border: 2px solid red;
+    background-color: white;
+    border: 2px solid black;
 }
 
 
 #clearButton, #deleteButton {
-    width: 40%;
-    font-size: 2em;
+    width: 41.5%;
+    font-size: 1.8em;
     margin: 10px;
 }
 
 .numberButton {
     width: 20%;
-    font-size: 1.5em;
-    margin: 5px;
-    padding: 5px;
+    font-size: 1.4em;
+    margin: 6px;
+    padding: 4px;
 }
 
 .operatorButton {
     width: 20%;
-    font-size: 1.5em;
-    margin: 5px;
-    padding: 5px;
+    font-size: 1.4em;
+    margin: 6px;
+    padding: 4px;
 }
