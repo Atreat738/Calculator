@@ -17,40 +17,56 @@ body {
     margin-top: 75px;
     padding: 20px 5px;
     background-color: #4682b4;
-    border: 2px solid black; 
+    border: 4px solid black; 
     border-radius: 10px;
 }
 
 #textboxContainer {
     width: 85%;
-    margin-top: 5px;
-    border: 2px solid red;
+    margin-top: 10px;
+
 }
 
 #textDisplay {
     text-align: right;
     margin: 5px auto;
+    height: 65%;
     background-color: white;
-    border: 2px solid black;
+    border: 3px solid black;
+    border-radius: 8px;
+}
+
+#textDisplay p {
+    margin-right: 7px;
 }
 
 
 #clearButton, #deleteButton {
     width: 41.5%;
-    font-size: 1.8em;
+    font-size: 1.75em;
     margin: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #838996;
+    color: #b31b1b;
+    /* b31b1b good
+     //778899  - diff grey */
 }
+#clearButton:hover, #deleteButton:hover {
+    background-color: #778899;
+}
+
 
 .numberButton {
     width: 20%;
     font-size: 1.4em;
-    margin: 6px;
+    margin: 7px;
     padding: 4px;
 }
 
 .operatorButton {
     width: 20%;
     font-size: 1.4em;
-    margin: 6px;
+    margin: 7px;
     padding: 4px;
 }
