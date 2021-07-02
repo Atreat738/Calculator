@@ -50,8 +50,6 @@ body {
     border-radius: 5px;
     background-color: #838996;
     color: #b31b1b;
-    /* b31b1b good
-     //778899  - diff grey */
 }
 #clearButton:hover, #deleteButton:hover {
     background-color: #778899;
