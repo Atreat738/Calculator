@@ -1,4 +1,3 @@
-//This first section declares every textbox and button in javascript
 const clearButton = document.querySelector('#clearButton');
 const deleteButton = document.querySelector('#deleteButton');
 const operators = document.querySelectorAll('.operatorButton');
@@ -14,36 +13,36 @@ let num2 = null;
 let toBeCleaned = false;
 let result = null;
 
-//The functions below will define the operator functions
-function add(a, b) {
-    return a + b;
+//Operator functions
+function add(num1, num2) {
+    return num1 + num2;
 }
 
-function subtract(a, b) {
-    return a - b;
+function subtract(num1, num2) {
+    return num1 - num2;
 }
 
-function multiply(a, b) {
-    return a * b;
+function multiply(num1, num2) {
+    return num1 * num2;
 }
 
-function divide(a, b) {
-    if (b == 0) {
+function divide(num1, num2) {
+    if (num2 == 0) {
         alert('I don\'t want to divide by zero!');
-        textDisplay.textcontent = 0;
-    } else { return a / b; }
+        return textDisplay.textContent = 0;
+    } else { return num1 / num2; }
 }
 
 
-function operate(a, b, currentOperator) {
-    if (currentOperator == add) {
-        return add(a, b);
-    } else if (currentOperator == subtract) {
-        return subtract(a, b);
-    } else if (currentOperator == multiply) {
-        return multiply(a, b);
-    } else if (currentOperator == divide) {
-        return divide(a, b);
+function operate(num1, num2, currentOperator) {
+    if (currentOperator == 'add') {
+        return add(num1, num2);
+    } else if (currentOperator == 'subtract') {
+        return subtract(num1, num2);
+    } else if (currentOperator == 'multiply') {
+        return multiply(num1, num2);
+    } else if (currentOperator == 'divide') {
+        return divide(num1, num2);
     }
 }   
 
@@ -58,33 +57,33 @@ function getDisplayValue() {
 
 function setOperator(operator) {
     if(currentOperator == null) {
-        return currentOperator = operator;
+        buttonDecimal.disabled = false;
+        currentOperator = operator;
     } else if(num1 && num2) {
-        result = operate(Number(num1), Number(num2), currentOperator);
+        //this will be used to chain operators together after a result is found
+        buttonDecimal.disabled = false;
         textDisplay.textContent = "";
         displayValue(result);
         num1 = result;
         num2 = null;
-        return currentOperator = operator;
+        currentOperator = operator;
     }
 }
 
-function setNum(value) {
+function setNum() {
     if(num1 == null) {     
         return num1 = getDisplayValue();
-    } else if (num2 == null && num1 != null) {
-        console.log(num1);
-        console.log(currentOperator);
+    } else {
         return num2 = getDisplayValue();
     }
 }
 
 function createResult() {
     if(num1 && currentOperator && !toBeCleaned && !num2) {
-        setNum(getDisplayValue());
-        return operate(Number(num1), Number(num2), currentOperator);
+        setNum();
+        return result = operate(Number(num1), Number(num2), currentOperator).toFixed(2);
     } else {
-        return false;
+        return result = false;        
     }
 }
 
@@ -97,8 +96,9 @@ numberButtons.forEach((numberButton) => {
         if(toBeCleaned == true) {
             textDisplay.textContent = "";
         }
+        displayValue(e.target.textContent); 
         toBeCleaned = false;
-        displayValue(e.target.textContent);               
+                      
     })
 })
 
@@ -122,13 +122,27 @@ clearButton.addEventListener('click', () =>{
     currentOperator = null;
     num2 = null;
     textDisplay.textContent = 0;
+    buttonDecimal.disabled = false;
 })
 
 buttonEquals.addEventListener('click', () => {
-    result = createResult();
+    let result = createResult();
     textDisplay.textContent = "";
-    displayValue(result);
+    
+    if (result) {
+        displayValue(result);
+    } else if (result == false) {
+        textDisplay.textContent = 'ERROR';
+    }
+    console.log(num1);
+    console.log(currentOperator);
     console.log(num2);
     console.log(result);
 })
 
+buttonDecimal.addEventListener('click', () => {
+    //check if there is a decimal 
+    if(textDisplay.textContent.includes('.')) {
+        buttonDecimal.disabled = true;
+    }
+})

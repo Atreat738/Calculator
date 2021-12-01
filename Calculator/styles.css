@@ -62,7 +62,7 @@ body {
     width: 20%;
 }
 
-.operatorButton {
+.operatorButton, #buttonEquals {
     font-size: 1.4em;
     margin: 7px;
     padding: 4px;
