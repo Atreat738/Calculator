@@ -1,5 +1,4 @@
-*Under Construction*
-Desktop Calculator Project!
+Calculator Project!
 
 This calculator will take 2 numbers and an operator to make an equation. 
 To Use: Enter the desired equation by clicking the number/operator buttons and press enter to see the result.

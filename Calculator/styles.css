@@ -1,10 +1,26 @@
-body {
-    align-items: center;
-    background-color: #a6e7ff;
+:root {
+    --fs-700: 3rem;
+    --fs-400: 2rem;
+    --fs-300: 1.75rem;
+}
+
+html, body {
+    height: 100%;
     box-sizing: border-box;
-    display: flex;
-    justify-content: center;
     margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #a6e7ff;
+}
+
+.split {
+    display: flex;
+    justify-content: space-around;
+    flex-basis: 100%;
 }
 
 #container {    
@@ -13,16 +29,64 @@ body {
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
-    font-size: 1.75rem;
     justify-content: center;
-    margin-top: 75px;
-    max-height: 100vh;
-    max-width: 25%;
-    padding: 20px 5px;
+    max-width: 22.5%;
+    font-size: var(--fs-300); 
+    padding: 0.8em 0.2em;
+    text-align: center;
+}
+
+@media (max-width: 1300px) {
+    :root {
+        --fs-700: 2.25rem;
+        --fs-400: 1.75rem;
+        --fs-300: 1.5rem;
+    }
+}
+
+@media (max-width: 1150px) {
+    :root {
+        --fs-700: 2.1rem;
+        --fs-400: 1.75rem;
+        --fs-300: 1.5rem;
+    }
+}
+
+@media (max-width: 950px) {
+    #container {
+        min-width: 25%;
+    }
+    :root {
+        --fs-700: 1.55rem;
+        --fs-400: 1.25rem;
+        --fs-300: 1rem;
+    }
+}
+
+@media (max-width: 750px) {
+    #container {
+        min-width: 30%;
+    }
+    :root {
+        --fs-700: 1.3rem;
+        --fs-400: 1.25rem;
+        --fs-300: 1rem;
+    }
+}
+
+@media (max-width: 580px) {
+    #container {
+        min-width: 35%;
+    }
+    :root {
+        --fs-700: 1.2rem;
+        --fs-400: 1.25rem;
+        --fs-300: 1rem;
+    }
 }
 
 #textboxContainer {
-    margin-top: 10px;
+    margin-top: 0.25em;
     width: 85%;
 }
 
@@ -31,13 +95,13 @@ body {
     border: 3px solid black;
     border-radius: 8px;
     height: 65%;
-    margin: 5px auto;
+    margin: 0.175em auto;
     pointer-events: none;
     text-align: right;
 }
 
 #textDisplay p {
-    margin-right: 7px;
+    margin-right: 0.2em;
 }
 
 
@@ -46,9 +110,8 @@ body {
     border: 2px solid black;
     border-radius: 5px;
     color: #b31b1b;
-    font-size: 1.75em;
-    margin: 10px;
-    width: 41.5%;
+    font-size: var(--fs-700); 
+    margin: 0.25em;
 }
 #clearButton:hover, #deleteButton:hover {
     background-color: #778899;
@@ -56,15 +119,15 @@ body {
 
 
 .numberButton {
-    font-size: 1.4em;
-    margin: 7px;
-    padding: 4px;
+    font-size: var(--fs-400);
+    margin: 0.2em;
+    padding: 0.15em 0.125em;
     width: 20%;
 }
 
 .operatorButton, #buttonEquals {
-    font-size: 1.4em;
-    margin: 7px;
-    padding: 4px;
+    font-size: var(--fs-400);
+    margin: 0.2em;
+    padding: 0.15em 0.125em;
     width: 20%;
 }
